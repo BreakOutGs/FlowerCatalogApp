@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<TabPane prefHeight="416.0" prefWidth="733.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FlowercCatalog.flowercatalog.EditBouquetController">
+   <tabs>
+    <Tab text="Інформація про букет">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <VBox alignment="CENTER_LEFT" layoutY="4.0" prefHeight="378.0" prefWidth="733.0">
+                     <children>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Редагування букету">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </HBox>
+                        <HBox>
+                           <children>
+                              <VBox alignment="CENTER" prefWidth="154.0" style="-fx-background-color: #e6e6e6;">
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </HBox.margin>
+                                 <children>
+                                    <ImageView fitHeight="84.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../flowercatalog/defaultbouquet.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="110.0" text="Вибрати зображення">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="TOP_CENTER">
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="15.0" />
+                                 </HBox.margin>
+                                 <children>
+                                    <TextField fx:id="BouquetName" prefHeight="26.0" prefWidth="186.0" promptText="Введіть назву букету">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <TextArea fx:id="BouquetDescription" prefHeight="147.0" prefWidth="453.0" promptText="Введіть опис букету">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </TextArea>
+                        <Button mnemonicParsing="false" onAction="#editBouquet" prefHeight="26.0" prefWidth="92.0" text="Змінити">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+      </content>
+    </Tab>
+      <Tab text="Аксесуари букету">
+        <content>
+            <ScrollPane>
+               <content>
+                  <VBox fx:id="BouquetAccessoriesContainer" prefHeight="67.0" prefWidth="714.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="46.0" prefWidth="398.0" style="-fx-background-color: #ffeb94;">
+                           <children>
+                              <CheckBox mnemonicParsing="false" prefHeight="18.0" prefWidth="16.0">
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" left="10.0" right="20.0" top="5.0" />
+                                 </HBox.margin>
+                              </CheckBox>
+                              <ImageView fitHeight="36.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../flowercatalog/defaultaccessory.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Назва аксесуару" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="314.4827194213867">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
+        </content>
+      </Tab>
+      <Tab text="Квіти букету">
+        <content>
+            <ScrollPane>
+               <content>
+                  <VBox fx:id="BouquetFlowersContainer" prefHeight="67.0" prefWidth="714.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="46.0" prefWidth="398.0" style="-fx-background-color: #ffeb94;">
+                           <children>
+                              <CheckBox mnemonicParsing="false" prefHeight="18.0" prefWidth="16.0">
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" left="10.0" right="20.0" top="5.0" />
+                                 </HBox.margin>
+                              </CheckBox>
+                              <ImageView fitHeight="36.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../flowercatalog/defaultflower.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Назва квітки" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="314.4827194213867">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
+        </content>
+      </Tab>
+   </tabs>
+</TabPane>
